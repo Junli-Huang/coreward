@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09131d" />
+  <title>Coreward · 地核守望</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">COREWARD / PROTOTYPE 0.1</p>
+        <h1>地核守望</h1>
+      </div>
+      <p class="tagline">向下挖掘。带回晶矿。在警报结束前回到炮台。</p>
+    </header>
+    <section class="game-frame">
+      <canvas id="game" width="1280" height="720" aria-label="Coreward 游戏画面"></canvas>
+      <div id="upgradePanel" class="panel hidden" role="dialog" aria-modal="true">
+        <div class="panel-card">
+          <div class="panel-head">
+            <div><p class="eyebrow">CORE STATION</p><h2>核心站升级</h2></div>
+            <button id="closeUpgrade">继续采掘</button>
+          </div>
+          <p>库存 <strong id="stockValue">0</strong> 晶矿。每次选择都在改变下一轮风险。</p>
+          <div id="upgradeGrid" class="upgrade-grid"></div>
+          <p class="keys">E / Esc 关闭</p>
+        </div>
+      </div>
+      <div id="startPanel" class="panel">
+        <div class="panel-card intro">
+          <p class="eyebrow">FIRST DESCENT</p>
+          <h2>核心站正在唤醒地下生物</h2>
+          <p>用方向键或 WASD 移动并挖掘。靠近发光晶矿自动装载，返回地表核心站自动存入。</p>
+          <div class="controls"><span>移动 / 挖掘 <b>WASD</b></span><span>升级 <b>E</b></span><span>进入炮台 <b>Space</b></span><span>炮台射击 <b>Space</b></span></div>
+          <button id="startButton" class="primary">开始下潜</button>
+        </div>
+      </div>
+      <div id="endPanel" class="panel hidden">
+        <div class="panel-card intro"><p class="eyebrow">RUN COMPLETE</p><h2 id="endTitle">核心站失守</h2><p id="endText"></p><button id="restartButton" class="primary">重新开始</button></div>
+      </div>
+    </section>
+    <footer><span>当前目标：验证「再挖一点，还是现在回去？」</span><span>桌面 Chrome · 键盘操作</span></footer>
+  </main>
+  <script src="src/game.js"></script>
+</body>
+</html>
